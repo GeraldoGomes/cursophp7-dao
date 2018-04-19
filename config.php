@@ -1,14 +1,10 @@
 <?php
 
-	spl_autoload_register(function($class_name) {
+	require_once("config.php");
 
-		$filename = "class".DIRECTORY_SEPARATOR.$class_name.".php";
+	$root = new usuario();
 
-		if (file_exists($filename)) {
+	$root->loadById(3);
 
-			require_once($filename);
-		}
-
-
-	});
+	echo $root;
 ?>
